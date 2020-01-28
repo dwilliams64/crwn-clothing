@@ -20,14 +20,14 @@ const sections =  [
   {
     title: 'womens',
     imageUrl: 'https://i.ibb.co/GCCdy8t/womens.png',
-    size: 'menu-item__large', // property used for custom class
+    size: 'menu-item__large', 
     id: 4,
     linkUrl: 'shop/womens'
   },
   {
     title: 'mens',
     imageUrl: 'https://i.ibb.co/R70vBrQ/men.png',
-    size: 'menu-item__large', // property used for custom class
+    size: 'menu-item__large', 
     id: 5,
     linkUrl: 'shop/mens'
   }
