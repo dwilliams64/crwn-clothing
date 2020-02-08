@@ -21,3 +21,5 @@ Review html forms - incomplete
 See properties availible for html forms (in lesson 75 we do not understand the values we pulled) - incomplete
 
 Review routing in React - incomplete
+
+Review boolean values javascript.info - incomplete
