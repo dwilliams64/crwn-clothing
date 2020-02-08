@@ -50,8 +50,6 @@ class SignIn extends React.Component {
                     />                    
                 </form>
 
-                {/* type will be passed into our CustomButton component as a prop and will be accessed by our component in the otherProps spread. */}
-                {/* Sign In will be passed into our CustomButton component as a children */}
                 <CustomButton type="submit">Sign In</CustomButton>
             </div>
         )
