@@ -2,3 +2,22 @@ Down 10 React
 
 React Jan 21 47-49
 
+All so study on functions from javascript.info - incomplete 
+
+Reivew classes and prototypes. - incomplete
+
+Look up .bind() - incomplete
+
+Look at destructing. - incomplete 
+
+Review css-tricks setState() article. - incomplete
+
+Review http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/ - incomplete
+
+Study object from javascript.info - incomplete
+
+Review html forms - incomplete
+
+See properties availible for html forms (in lesson 75 we do not understand the values we pulled) - incomplete
+
+Review routing in React - incomplete
