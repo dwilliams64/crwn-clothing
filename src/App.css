@@ -3,15 +3,6 @@ body {
     padding: 20px 60px;
 }
 
-
-/* 
-
-This will get rid of the default styling for all <a> 
-
-In React <Link /> components get rendered out as <a>
-
-
-*/
 a {
     text-decoration: none;
     color: black;

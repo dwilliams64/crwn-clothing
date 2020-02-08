@@ -9,10 +9,7 @@ import './App.css';
 function App() {
   return (
     <div>
-      
-      {/* We want our Header component to be present on every page. Easiest 
-      way to do this is to, is to place the header component outside of our routes so 
-      that the Header component will always be rendered above a Page component. */}
+
       <Header />
 
       <Switch>
