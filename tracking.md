@@ -4,6 +4,8 @@ React Jan 21 47-49
 
 All so study on functions from javascript.info - incomplete 
 
+Using variables as functions javascript.info - incomplete
+
 Reivew classes and prototypes. - incomplete
 
 Look up .bind() - incomplete
