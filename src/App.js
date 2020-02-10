@@ -5,6 +5,22 @@ import ShopePage from './pages/shoppage/shoppage.component';
 import Header from './components/header/header.component';
 import SignInUp from './pages/sign-in-up/sign-in-up.component';
 
+/*
+  Summary:
+
+  Basically we setup google authentication through firebase.  
+
+  We then setup google authentication inside of our app.
+
+  We also set our app up to get the user session state from firebase when the app component mounts.
+
+  Now firebase has a way to talk to our app.
+
+  We also setup away to unsubscribe a user session when our App component unmounts.
+
+
+*/
+
 // Imports authentication method.
 import { auth } from './firebase/firebase.utiles';
 
