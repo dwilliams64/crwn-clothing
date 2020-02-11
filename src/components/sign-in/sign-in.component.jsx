@@ -1,6 +1,8 @@
 import React from 'react';
 import FormInput from '../form-input/form-input.component';
 import CustomButton from '../custom-button/custom-button.component';
+
+// Imports our google sign in pop from our fire base utilites.
 import { signInWithGoogle } from '../../firebase/firebase.utiles';
 
 import './sign-in.styles.scss';
@@ -51,8 +53,17 @@ class SignIn extends React.Component {
                     />                    
                 </form>
 
-                <CustomButton type="submit">Sign In</CustomButton>
-                <CustomButton onClick={ signInWithGoogle }>Sign In with Google</CustomButton>
+                <div className="buttons">
+                    <CustomButton type="submit">Sign In</CustomButton>
+
+                    {/* isGoogleSignIn is a prop that we will pass into our CustomButton class. This will allow us to dynamically add  
+                    a class on one of our button components. When a prop is passed in with no value it will automatically evaluate
+                    to true. If isGoogleSignIn is present then the value of true will be passed in by the isGoogleSignIn prop into 
+                    our CustomButton component. */}
+                    <CustomButton onClick={ signInWithGoogle } isGoogleSignIn>Sign In with Google</CustomButton>
+                </div>
+
+
             </div>
         )
     }
