@@ -25,3 +25,11 @@ See properties availible for html forms (in lesson 75 we do not understand the v
 Review routing in React - incomplete
 
 Review boolean values javascript.info - incomplete
+
+Rewrite scss to use bem and clean up any odd css behavior. - incomplete
+
+Ask why we use anymous founctions and othe times use the functions on event listners. - incomplete
+
+Go over CSS selectors - incomplete
+
+Go over Sass nesting and & - incomplete
