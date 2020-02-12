@@ -17,23 +17,12 @@ class SignIn extends React.Component {
 
     handleSubmit = async e => {
         e.preventDefault();
-        
-        /*
-            We are setting up signing in with a users email and password that they used
-            to create a user account on our app.
-        
-        */
-        
+
         const { email, password } = this.state;
 
         try {
-
-            // .signInWithEmailAndPassword() is from our firebase auth lib.
-            // Asynchronously signs in using an email and password. Fails with an error if the email address and password do not match.
             await auth.signInWithEmailAndPassword(email, password);
 
-            // Rests the state of our component which will also clear the email and password
-            // fields on the sign-in form.
             this.setState({email: '', password: ''});
         } catch (error) {
             console.log(error);
