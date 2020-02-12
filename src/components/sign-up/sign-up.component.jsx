@@ -31,29 +31,11 @@ class SignUp extends React.Component {
             return;
         }
 
-        try {
-            // The .createUserWithEmailAndPassword() method comes from the firebase auth lib.
-
-            // The .createUserWithEmailAndPassword() method creates a new user account
-            // associated with the specified email address and password.
-
-            // 1st argument takes in the email.
-            // 2nd argument takes in the password.
-
-            // If successful then the user account is created and the user is logged into the 
-            // application.
-
-            // Account creation fails if the user already exists or if the password is invalid.
-
-            // Returns a user auth object.
-            // We want the user auth object but in order to access it we need access to the property/key
-            // user which the user auth object we want is a value of. Hence the reason why we are destructuring
-            // the user property/key. 
+        try {            
             const { user } = await auth.createUserWithEmailAndPassword(email, password);
             
             await createUserProfileDocument(user, { displayName });
-
-            // Clears our state after submit.
+            
             this.setState({
                 displayName: '',
                 email: '',
