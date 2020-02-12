@@ -33,3 +33,5 @@ Ask why we use anymous founctions and othe times use the functions on event list
 Go over CSS selectors - incomplete
 
 Go over Sass nesting and & - incomplete
+
+Go over async await - incomplete

@@ -4,7 +4,9 @@ import HomePage from './pages/homepage/homepage.component';
 import ShopePage from './pages/shoppage/shoppage.component';
 import Header from './components/header/header.component';
 import SignInUp from './pages/sign-in-up/sign-in-up.component';
-import { auth } from './firebase/firebase.utiles';
+
+// Imports our createUserProfileDocument() function from our firebase utilies.
+import { auth, createUserProfileDocument } from './firebase/firebase.utiles';
 
 import './App.css';
 
@@ -19,8 +21,24 @@ class App extends React.Component {
 
   unsubscribeFromAuth = null;
 
+  /*
+  
+  Note: We are using async function calls in our code because making an API call is
+  a asynchronous ventrue.
+  
+  */
+
   componentDidMount() {    
-    this.unsubscribeFromAuth = auth.onAuthStateChanged(user => this.setState({ currentUser: user }));
+    this.unsubscribeFromAuth = auth.onAuthStateChanged(async user => 
+      
+      // Passes our user object that we get from .onAuthStateChanged() method into our
+      // createUserProfileDocument() function that is inside of our firebase utiles.
+      createUserProfileDocument(user)
+
+      // this.setState({ currentUser: user })
+      
+      
+      );
   }
 
   componentWillUnmount() { this.unsubscribeFromAuth(); }
