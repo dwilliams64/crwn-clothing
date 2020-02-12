@@ -37,3 +37,5 @@ Go over Sass nesting and & - incomplete
 Go over async await - incomplete
 
 Go React concepts like prevState preProps - incomplete
+
+Look up console.error - incomplete
