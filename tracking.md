@@ -39,3 +39,5 @@ Go over async await - incomplete
 Go React concepts like prevState preProps - incomplete
 
 Look up console.error - incomplete
+
+Add firebase unsubsribe quiz to notes - incomplete
