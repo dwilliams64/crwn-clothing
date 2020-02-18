@@ -20,8 +20,15 @@ import App from './App';
 // Provider gives us access to store.
 import { Provider } from 'react-redux';
 
+import store from './redux/store';
+
 ReactDOM.render(
-    <Provider>
+    // We are passing in our store into the Provider component so the whole app
+    // will have access to the store.
+
+    // Now we can dispatch actions to that store or read values off of the store
+    // and pass those values into our components.
+    <Provider store={store}>
         <BrowserRouter>
             <App />
         </BrowserRouter>
