@@ -1,7 +1,4 @@
 import React from 'react';
-
-
-// Importing the Redirect component.
 import { Route, Switch, Redirect } from 'react-router-dom';
 import HomePage from './pages/homepage/homepage.component';
 import ShopePage from './pages/shoppage/shoppage.component';
@@ -47,19 +44,8 @@ class App extends React.Component {
         <Switch>
           <Route exact path='/' component={HomePage} />
           <Route exact path='/shop' component={ShopePage} />
-
-          {/* 
-              A component with a render prop takes a function that returns a React 
-              element and calls it instead of implementing its own render logic.
-          
-              https://reactjs.org/docs/render-props.html
-          
-          */}
           <Route exact path='/signin' render={() => 
             this.props.currentUser ? (
-
-              // Component from React-Router that is used for redirecting.
-              // https://reacttraining.com/react-router/web/api/Redirect
               <Redirect to='/' />
             ) : (
               <SignInUp />
@@ -73,7 +59,6 @@ class App extends React.Component {
 
 }
 
-// Will get our currentUser value from redux.
 const mapStateToProps = ({ user }) => ({
   currentUser: user.currentUser
 });

@@ -6,8 +6,6 @@ const INTIAL_STATE = {
 
 const userReducer = (state = INTIAL_STATE, action) => {
     switch (action.type) {
-        
-        // Using our action type from user.types.js
         case UserActoinTypes.SET_CURRENT_USER:
             return {
                 ...state,
