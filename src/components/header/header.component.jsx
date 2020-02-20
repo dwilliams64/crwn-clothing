@@ -56,31 +56,7 @@ const Header = ({currentUser, hidden}) => (
     </div>
 )
 
-// {user: { currentUser }, cart: { hidden }} is an example of a more advanced way of desturturing.
-
-// Our Root Reducer object (state) has nested objects. This syntax destructures those nested objects.
-
-// state/Root Reducer object looks like:
-
-/*
-
-state = {
-    user: {
-        currentUser: currentUser values
-    },
-
-    cart: {
-        hidden: hidden values
-    }    
-}
-
-*/
-
 const mapStateToProps = ({user: { currentUser }, cart: { hidden }}) => ({
-
-    // Since we just need the values pulled out of our master state/Root Reducer
-    // we can just use currentUser and hidden. Now these values can be mapped to
-    // props inside of this component (header)
     currentUser,
     hidden
 });
