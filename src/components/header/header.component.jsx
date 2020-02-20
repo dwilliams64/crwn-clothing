@@ -7,6 +7,8 @@ import './header.styles.scss';
 import { ReactComponent as Logo } from '../../assets/crown.svg';
 import CartIcon from '../cart-icon/cart-icon.component';
 
+import CartDropDown from '../cart-dropdown/cart-dropdown.component';
+
 const Header = ({currentUser}) => (
     <div className="header">
         <Link to="/" className="logo-container">
@@ -41,10 +43,12 @@ const Header = ({currentUser}) => (
                     </Link>
                 )
                 
-            }            
-        </div>
+            } 
 
-        <CartIcon />        
+            
+        </div>
+        <CartIcon />  
+        <CartDropDown />       
     </div>
 )
 
