@@ -8,8 +8,11 @@ const CollectionPreview = ({title, items}) => (
         <div className='preview'>
             {
                 items.filter((item, idx) => idx < 4)
-                    .map(({id, ...otherItemProps}) => (
-                        <CollectionItem key={id} {...otherItemProps}/>
+
+                // Modified code so that the item is passed in as a whole.
+                // We did this so the whole item can be passed into redux.
+                    .map(item => (
+                        <CollectionItem key={item.id} item={item}/>
                 ))
             }
         </div>
