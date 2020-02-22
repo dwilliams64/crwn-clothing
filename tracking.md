@@ -49,3 +49,5 @@ Go over redux docs from links - incomplete
 Go over user login and database stuff about firebase - incomplete
 
 Review importing svgs into React - incomplete
+
+Review react router (also lookup what history.push does) - incomplete
