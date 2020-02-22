@@ -24,8 +24,7 @@ const CartDropDown = ({ cartItems, history }) => (
                 )
             }
         </div>
-
-        {/* history.push() Pushes a new entry onto the history stack */}
+        
         <CustomButton onClick={() => history.push('/checkout')}>GO TO CHECKOUT</CustomButton>
     </div>    
 );
@@ -34,8 +33,4 @@ const mapStateToProps = createStructuredSelector({
     cartItems: selectCartItems
 });
 
-// Here we are wrapping two HOC.
-// The order in which they are wrapped in does matter.
-// connect will run first and return the newer component with the redux.
-// Then withRouter will run and return the component with all the Routing.
 export default withRouter(connect(mapStateToProps)(CartDropDown));
