@@ -19,10 +19,7 @@ const mapDispatchToProps = dispatch => ({
     toggleCartHidden: () => dispatch(toggleCartHidden())
 });
 
-// Whole state is passed in.
 const mapStateToProps = (state) => ({
-
-    // State gets passed into selectCartItemsCount selector.
     itemCount: selectCartItemsCount(state)
 });
 
