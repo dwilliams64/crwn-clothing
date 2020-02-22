@@ -2,8 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { auth } from '../../firebase/firebase.utiles';
 import { connect } from 'react-redux';
-
-// Imports createStructuredSelector
 import { createStructuredSelector } from 'reselect';
 
 import './header.styles.scss';
@@ -63,10 +61,6 @@ const Header = ({currentUser, hidden}) => (
     </div>
 )
 
-
-// createStructuredSelector is a method from the reselect lib.
-// It passes down our top level state to multiple selectors.
-// This comes in handy if you have a long list of selectors.
 const mapStateToProps = createStructuredSelector({
     currentUser: selectCurrentUser,
     hidden: selectCartHidden
