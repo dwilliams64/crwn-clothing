@@ -1,9 +1,5 @@
 import { combineReducers } from 'redux';
-
-// Persists our reducer
 import { persistReducer } from 'redux-persist';
-
-// Brings in our localStorage from our window object inside of our browser.
 import storage from 'redux-persist/lib/storage';
 
 import userReducer from './user/user-reducer';
