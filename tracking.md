@@ -51,3 +51,5 @@ Go over user login and database stuff about firebase - incomplete
 Review importing svgs into React - incomplete
 
 Review react router (also lookup what history.push does) - incomplete
+
+Review selectors (also compare code now to before adding selectors) - incomplete
