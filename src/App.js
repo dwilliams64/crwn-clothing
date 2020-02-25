@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import HomePage from './pages/homepage/homepage.component';
-import ShopePage from './pages/shoppage/shoppage.component';
+import ShopPage from './pages/shoppage/shoppage.component';
 import Header from './components/header/header.component';
 import SignInUp from './pages/sign-in-up/sign-in-up.component';
 import CheckoutPage from './pages/checkout/checkoutpage.component';
@@ -49,7 +49,19 @@ class App extends React.Component {
 
         <Switch>
           <Route exact path='/' component={HomePage} />
-          <Route path='/shop' component={ShopePage} />
+
+          {/* 
+              The Route component passes in three objects as props by default
+              to the component it is wrapped around (in this case ShopPage).
+
+              They are history, match, and location.
+
+              We will be using the match object to make a dynamically nested route.
+              
+              The path (path='/shop') prop will pass down its params to the ShopPage
+              component. 
+          */}
+          <Route path='/shop' component={ShopPage} />
           <Route exact path='/checkout' component={CheckoutPage} />
           <Route exact path='/signin' render={() => 
             this.props.currentUser ? (
