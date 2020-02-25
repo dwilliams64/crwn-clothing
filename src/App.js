@@ -49,18 +49,6 @@ class App extends React.Component {
 
         <Switch>
           <Route exact path='/' component={HomePage} />
-
-          {/* 
-              The Route component passes in three objects as props by default
-              to the component it is wrapped around (in this case ShopPage).
-
-              They are history, match, and location.
-
-              We will be using the match object to make a dynamically nested route.
-              
-              The path (path='/shop') prop will pass down its params to the ShopPage
-              component. 
-          */}
           <Route path='/shop' component={ShopPage} />
           <Route exact path='/checkout' component={CheckoutPage} />
           <Route exact path='/signin' render={() => 
