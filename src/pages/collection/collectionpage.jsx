@@ -15,15 +15,8 @@ const CollectionPage = ({ collection }) => {
     </div>
 )};
 
-
-// mapStateToProps has two arguments.
-
-// 1st is the state wich is the overall state reducer state at top level.
-
-// 2nd argument is optional and is the props of the the component we wish
-// to wrap inside of the connect method below.
 const mapStateToProps = (state, ownProps) => ({
-    collection: selectCollection(ownProps.match.params.collectionId)
+    collection: selectCollection(ownProps.match.params.collectionId)(state)
 });
 
 export default connect(mapStateToProps)(CollectionPage);
