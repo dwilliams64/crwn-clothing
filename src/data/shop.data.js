@@ -1,3 +1,23 @@
+/*
+
+Data normalization is where you store lists of elements inside of an object instead of an array. 
+
+The reason why we would want to store lists of elements inside of an object versus an array is because look up an element inside of an object is quicker than looking up an element in an array. 
+
+Basically in an array you have to iterate over every element until you find a match.  This will result in poor performance when you have a large array.  
+
+With an object, when you look up an element you do not have to iterate over every other element. Just search for the key and the value is returned.   
+
+This is just a simple explanation. Read more about the topic to fully understand here: 
+
+https://www.kirupa.com/html5/hashtables_vs_arrays.htm 
+
+Currently our collections are stored in an array of nested objects.  In order to load our collections quicker we should change our array into objects. 
+
+*/
+
+
+// Converted SHOP_DATA array into an object for data normalization.
 const SHOP_DATA = {
   hats: {
     id: 1,
