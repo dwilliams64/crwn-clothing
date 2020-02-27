@@ -52,4 +52,8 @@ Review importing svgs into React - incomplete
 
 Review react router (also lookup what history.push does) - incomplete
 
+In React router what is the difference between url and path - incomplete
+
 Review selectors (also compare code now to before adding selectors) - incomplete
+
+practice data normalization on directory.data.js - incomplete
