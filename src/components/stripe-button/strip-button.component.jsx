@@ -2,11 +2,7 @@ import React from 'react';
 import StripCheckout from 'react-stripe-checkout';
 
 const StripeCheckoutButton = ({ price }) => {
-
-    // Converts the price to cents for proccessing by stripe API
     const priceForStripe = price * 100;
-
-    // Publishable key we get from stripe dashboard
     const publishableKey = 'pk_test_xnEhnBnFVDMVRkWLxibuCN0z00SioiyWBf';
 
     const onToken = token => {
@@ -24,12 +20,6 @@ const StripeCheckoutButton = ({ price }) => {
             description={`Your total is $${price}`}
             amount={priceForStripe}
             panelLabel='Pay Now'
-
-            // token is used to pass payments to a back end to process
-            // payments.
-
-            // For now we will just pass in test data until the backend
-            // is connected.
             token={onToken}
             stripeKey={publishableKey}        
         />
