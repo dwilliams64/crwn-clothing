@@ -1,11 +1,16 @@
 import React from 'react';
 import Directory from '../../components/directory/directory.component';
-import './homepage.styles.scss';
+
+// Importing our styled component from homepage.styles.jsx
+import { HomePageContainer } from './homepage.styles';
 
 const Homepage = () => (
-    <div className='homepage'>
+
+    // This component will render out a div with our styles we 
+    // defined inside of homepage.styles.jsx.
+    <HomePageContainer>
         <Directory />
-    </div>
+    </HomePageContainer>
 );
 
 export default Homepage;
