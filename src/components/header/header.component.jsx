@@ -42,7 +42,7 @@ const Header = ({currentUser, hidden}) => (
                 )
                 
                 : (
-                    <OptionLink as="div" to="/signin">
+                    <OptionLink to="/signin">
                         SIGN IN
                     </OptionLink>
                 )
