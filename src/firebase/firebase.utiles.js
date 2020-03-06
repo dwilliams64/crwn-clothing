@@ -38,6 +38,20 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
     return userRef;
 }
 
+// Will add Shop Data to firebase
+// 1st argument will be the name of our collection and will be the key
+// 2nd will be the our shop data that we want to add to firebase
+export const addCollectionAndDocuments = (collectionKey, objectsToAdd) => {
+    
+    // Even though we do not have a reference object for our collections
+    // firebase will still return a reference object. This way we can add
+    // documents and a collection to the collection reference. By doing this whatever documents
+    // and collection we add to this collection reference will be saved to our database without the
+    // need for us to configure anything inside of the firebase console.
+    const collectionRef = firestore.collection(collectionKey);
+    console.log(collectionRef);
+}
+
 firebase.initializeApp(config);
 
 export const auth = firebase.auth();
