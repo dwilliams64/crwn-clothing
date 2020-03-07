@@ -38,18 +38,35 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
     return userRef;
 }
 
-// Will add Shop Data to firebase
-// 1st argument will be the name of our collection and will be the key
-// 2nd will be the our shop data that we want to add to firebase
-export const addCollectionAndDocuments = (collectionKey, objectsToAdd) => {
-    
-    // Even though we do not have a reference object for our collections
-    // firebase will still return a reference object. This way we can add
-    // documents and a collection to the collection reference. By doing this whatever documents
-    // and collection we add to this collection reference will be saved to our database without the
-    // need for us to configure anything inside of the firebase console.
+export const addCollectionAndDocuments = async (collectionKey, objectsToAdd) => {
     const collectionRef = firestore.collection(collectionKey);
-    console.log(collectionRef);
+    
+    // .batch() gives us access to an object that will allow us
+    // to store all of our .set() calls in a batch and then send
+    // the batch object back to firebase once we finish populating
+    // the batch object with our .set() calls.
+    const batch = firestore.batch();
+    
+
+    objectsToAdd.forEach(obj => {
+
+        // Gets Document at empty string
+        // Creates a new Document object reference and generates 
+        // a random ID when no argument is present
+        const newDocRef = collectionRef.doc();
+
+        // batch.set will batch together multiple .set() calls
+        // 1st arguemnt is our Document Reference
+        // 2nd argument is value we are setting on our Document Reference
+        batch.set(newDocRef, obj);
+        
+
+        
+    });
+
+    // Commits our batch to be set off to firebase
+    // .commit() returns promise
+    return await batch.commit();
 }
 
 firebase.initializeApp(config);
