@@ -51,6 +51,36 @@ export const addCollectionAndDocuments = async (collectionKey, objectsToAdd) => 
     return await batch.commit();
 }
 
+// Converts the array that we get back from collectionsRef from
+// firestore into an object to be used inside of app.
+export const convertCollectionsSnapshotToMap = (collections) => {
+
+    // This will strip the data we need from our snapshot object
+    // and return a custom object with the data we need for our app.
+    const transformedCollection = collections.docs.map(doc => {
+
+        // Gets the actual properties on the object by calling the 
+        // .data() method, which returns us a JSON object of the document.
+        // Here we are stripping the properties we need for our custom object. 
+        const { title, items } = doc.data();
+
+        // We are returning the custom object we need for our app.
+        return {
+            // The encodeURI() function encodes a URI by replacing each instance of certain 
+            // characters by one, two, three, or four escape sequences representing 
+            // the UTF-8 encoding of the character (will only be four escape sequences 
+            // for characters composed of two "surrogate" characters).
+            // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURI
+            routeName: encodeURI(title.toLowerCase()),
+            id: doc.id,
+            title,
+            items
+        }
+    });
+
+    console.log(transformedCollection)
+};
+
 firebase.initializeApp(config);
 
 export const auth = firebase.auth();
