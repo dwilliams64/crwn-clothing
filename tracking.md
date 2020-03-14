@@ -59,3 +59,5 @@ Review selectors (also compare code now to before adding selectors) - incomplete
 practice data normalization on directory.data.js - incomplete
 
 take notes and re-watch 149 - incomplete
+
+go over reduce array method - incomplete

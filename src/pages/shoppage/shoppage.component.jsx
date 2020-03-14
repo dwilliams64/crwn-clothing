@@ -1,5 +1,6 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 import CollectionPage from '../collection/collectionpage';
 
@@ -7,31 +8,18 @@ import CollectoinsOverview from '../../components/collections-overview/collectio
 
 import { firestore, convertCollectionsSnapshotToMap} from '../../firebase/firebase.utiles';
 
-class ShopPage extends React.Component {
+import { updateCollections } from '../../redux/shop/shop.actions';
 
-    // Used to unsubscribe from firestore to prevent memory leaks
-    // when ShopPage component is unmounted.
+class ShopPage extends React.Component {
     unsubscribeFromSnapshot = null;
 
     componentDidMount() {
-
-        // Returns an object that represents the current place in our 
-        // database that we are querying.
-        // In this case we are querying the collection collections (store items we moved to firebase)
+        const { updateCollections } = this.props;
         const collectionRef = firestore.collection('collections');
-
-        console.log(collectionRef);
-
-        // We our using the .onSnapshot method on our collection reference
-        // object to get a snapshot of our collections data (store items).
-        // This will give us access to the store items data we need inside
-        // of our app.        
-        collectionRef.onSnapshot(async snapshot => {
-
-            // Passing our snapshot object from firebase into our 
-            // custom function from our firebase utlies
-            convertCollectionsSnapshotToMap(snapshot);
-            
+  
+        this.unsubscribeFromSnapshot = collectionRef.onSnapshot(async snapshot => {
+            const collectionsMap = convertCollectionsSnapshotToMap(snapshot);
+            updateCollections(collectionsMap);          
         });
     }
 
@@ -44,6 +32,10 @@ class ShopPage extends React.Component {
             </div>
         );
     }
-} 
+}
 
-export default ShopPage;
+const mapDispatchToProps = dispatch => ({
+    updateCollections: collectionsMap => dispatch(updateCollections(collectionsMap))
+});
+
+export default connect(null, mapDispatchToProps)(ShopPage);
